@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from timezonefinder import TimezoneFinder
 import requests
-import swisseph as swe
+import pyswisseph as swe   # <-- FIXED HERE
 import datetime
 import pytz
 
@@ -33,7 +33,6 @@ SIGNS = [
 
 # TimezoneFinder instance (thread-safe)
 tf = TimezoneFinder()
-
 
 # -- OLD METHOD (kept for reference) ---------------------------------
 def get_timezone(lat, lon, date_iso):
